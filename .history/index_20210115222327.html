@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+      integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hangman</title>
+  </head>
+  <body>
+    <h1>Hangman</h1>
+    <p>Find the hidden word - Enter a letter on your Keyboard</p>
+    <div><button class="submit-btn" id="categoryBtn">Category</button></div>
+
+    <!-- Hangman graphic container -->
+
+    <div class="game-container">
+      <svg height="250" width="200" class="figure-container">
+        <!-- Pole -->
+        <line x1="60" y1="20" x2="140" y2="20" />
+        <line x1="140" y1="20" x2="140" y2="40" />
+        <line x1="60" y1="20" x2="60" y2="200" />
+        <line x1="20" y1="200" x2="100" y2="200" />
+
+        <!-- Head -->
+        <circle cx="140" cy="60" r="20" class="figure-part" />
+        <!-- Body -->
+        <line x1="140" y1="80" x2="140" y2="140" class="figure-part" />
+        <!-- arms -->
+        <line x1="140" y1="90" x2="110" y2="120" class="figure-part" />
+        <line x1="140" y1="90" x2="170" y2="120" class="figure-part" />
+        <!-- Legs -->
+        <line x1="140" y1="140" x2="120" y2="180" class="figure-part" />
+        <line x1="140" y1="140" x2="160" y2="180" class="figure-part" />
+      </svg>
+
+      <!-- Wrong letters -->
+      <div class="wrong-letters-container">
+        <div id="wrong-letters"></div>
+      </div>
+      <div class="word" id="word"></div>
+    </div>
+
+    <!-- Final message -->
+    <div class="popup-container" id="popup-container">
+      <div class="popup">
+        <h2 id="final-message">You have won!</h2>
+        <h3 id="final-message-reveal-word"></h3>
+        <!-- <button id="play-button">Play again?</button> -->
+      </div>
+    </div>
+
+    <!-- Notify -->
+
+    <div id="notification-contianer" class="notification-container">
+      <p>You have already entered this letter</p>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-container" id="modal">
+      <div class="modal">
+        <button class="close-btn">
+          <i class="fa fa-times" id="close"></i>
+        </button>
+        <div class="modal-header">
+          <h3>Pick the secret word</h3>
+        </div>
+        <div class="modal-content">
+          <form class="modal-form">
+            <div>
+              <label for="categorySelect">Choose category</label>
+              <select name="category" id="categorySelect">
+                <option hidden selected value="">Categories</option>
+                <option value="food">Food</option>
+                <option value="superheroes">superheroes</option>
+                <option value="countries">Countries</option>
+              </select>
+            </div>
+            <h3>OR</h3>
+            <div>
+              <label for="userWord">Write your own word</label>
+              <input class="form-input" id="userInput" type="text" />
+            </div>
+
+            <input
+              type="button"
+              value="Submit"
+              id="confirmBtn"
+              class="submit-btn"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
