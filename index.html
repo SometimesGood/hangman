@@ -29,15 +29,45 @@
         <line x1="20" y1="200" x2="100" y2="200" />
 
         <!-- Head -->
-        <circle cx="140" cy="60" r="20" class="figure-part" />
+        <circle cx="140" cy="60" r="20" class="figure-part body-part" />
         <!-- Body -->
-        <line x1="140" y1="80" x2="140" y2="140" class="figure-part" />
+        <line
+          x1="140"
+          y1="80"
+          x2="140"
+          y2="140"
+          class="figure-part body-part"
+        />
         <!-- arms -->
-        <line x1="140" y1="90" x2="110" y2="120" class="figure-part" />
-        <line x1="140" y1="90" x2="170" y2="120" class="figure-part" />
+        <line
+          x1="140"
+          y1="90"
+          x2="110"
+          y2="120"
+          class="figure-part body-part"
+        />
+        <line
+          x1="140"
+          y1="90"
+          x2="170"
+          y2="120"
+          class="figure-part body-part"
+        />
         <!-- Legs -->
-        <line x1="140" y1="140" x2="120" y2="180" class="figure-part" />
-        <line x1="140" y1="140" x2="160" y2="180" class="figure-part" />
+        <line
+          x1="140"
+          y1="140"
+          x2="120"
+          y2="180"
+          class="figure-part body-part"
+        />
+        <line
+          x1="140"
+          y1="140"
+          x2="160"
+          y2="180"
+          class="figure-part body-part"
+        />
       </svg>
 
       <!-- Wrong letters -->
@@ -52,7 +82,7 @@
       <div class="popup">
         <h2 id="final-message">You have won!</h2>
         <h3 id="final-message-reveal-word"></h3>
-        <!-- <button id="play-button">Play again?</button> -->
+        <button id="play-again">Play again?</button>
       </div>
     </div>
 
@@ -76,21 +106,17 @@
             <div>
               <label for="categorySelect">Choose category</label>
               <select name="category" id="categorySelect">
-                <option hidden selected value="">Categories</option>
+                <option hidden value="">Categories</option>
                 <option value="food">Food</option>
                 <option value="superheroes">superheroes</option>
                 <option value="countries">Countries</option>
+                <option value="random">Random</option>
               </select>
             </div>
             <h3>OR</h3>
             <div>
               <label for="userWord">Write your own word</label>
               <input class="form-input" id="userInput" type="text" />
-            </div>
-            <h3>OR</h3>
-            <div>
-              <label for="randomWord">Random word</label>
-              <button class="form-button">Generate random word</button>
             </div>
 
             <input
